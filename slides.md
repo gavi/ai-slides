@@ -104,7 +104,7 @@ style: |
 
 ---
 
-### Let's Start With Something Familiar 📱
+### Let's Start With Something Familiar
 
 Open your phone and start typing a message...
 
@@ -117,7 +117,7 @@ This is **predictive text** - the ancestor of ChatGPT!
 - Counts word frequencies in large text collections
 - "I'll be" → often followed by "there", "back", "late"
 
-> 💡 **Key Insight:** What if we could predict not just words, but understand context and meaning?
+> **Key Insight:** What if we could predict not just words, but understand context and meaning?
 
 ---
 
@@ -128,13 +128,13 @@ This is **predictive text** - the ancestor of ChatGPT!
 | **1950s-1980s** | Rule-based | `if word == "Hello": suggest("World")` |
 | **1990s-2000s** | Statistical (N-grams) | `P("world"\|"hello") = 0.73` |
 | **2010s** | Deep Learning | Neural networks learn patterns |
-| **2017-Present** | Transformers | Attention mechanism changes everything! 🚀 |
+| **2017-Present** | Transformers | Attention mechanism changes everything! |
 
 Each era built on the previous, leading to today's AI revolution
 
 ---
 
-# What is a Model? 🧠
+# What is a Model?
 
 > **A model is just numbers (weights) arranged in a specific pattern**
 
@@ -143,7 +143,7 @@ Each era built on the previous, leading to today's AI revolution
 <div class="columns">
 <div>
 
-**Ingredients** 🥘
+**Ingredients**
 - Input text
 - Training data
 - Computing power
@@ -151,7 +151,7 @@ Each era built on the previous, leading to today's AI revolution
 </div>
 <div>
 
-**Instructions** 📖
+**Instructions**
 - Neural network architecture
 - Billions of weights
 - Mathematical operations
@@ -170,7 +170,7 @@ Each era built on the previous, leading to today's AI revolution
 <div class="columns">
 <div>
 
-### Training 🎓
+### Training
 - Teaching the model patterns
 - Adjusting billions of weights
 - Like learning to ride a bike
@@ -178,17 +178,11 @@ Each era built on the previous, leading to today's AI revolution
 - Very expensive ($$$)
 - Takes weeks/months
 
-```python
-for epoch in range(1000):
-    prediction = model(input)
-    loss = compare(prediction, truth)
-    adjust_weights(loss)
-```
 
 </div>
 <div>
 
-### Inference 💭
+### Inference
 - Using what was learned
 - Weights are frozen
 - Actually riding the bike
@@ -196,12 +190,48 @@ for epoch in range(1000):
 - Relatively cheap
 - Takes milliseconds
 
-```python
-# Simple inference
-input = "What is AI?"
-output = model(input)
-# No weight updates!
-```
+
+</div>
+</div>
+
+---
+
+# How Neural Networks Learn: Gradient Descent
+
+<div class="columns">
+<div>
+
+## The Training Process
+
+**Gradient Descent** - Like hiking down a mountain in the dark:
+- Calculate the error (how wrong we are)
+- Find the steepest downhill direction
+- Take a small step in that direction
+- Repeat millions of times
+
+</div>
+<div>
+
+![w:400](gradient_descent.png)
+
+</div>
+<div>
+
+---
+<div class="columns">
+<div>
+
+### Training Loop:
+1. **Forward Pass**: Input → Predictions
+2. **Calculate Loss**: Compare to correct answers
+3. **Backward Pass**: Calculate gradients
+4. **Update Weights**: Adjust based on gradients
+5. **Repeat**: Until model converges
+
+</div>
+<div>
+
+![w:400](neural_network.png)
 
 </div>
 </div>
@@ -215,24 +245,26 @@ output = model(input)
 
 ---
 
+<!-- _class: split -->
+
 # "Attention is All You Need" (2017)
 
 ## The paper that launched the modern AI era
 
-### Key Innovation: **Attention Mechanism** 🎯
+### Key Innovation: **Attention Mechanism**
 
 The model can "focus" on relevant parts of the input
-<p class="small">
-> **Analogy:** Reading a book and being able to instantly refer back to any previous page, understanding how every word relates to every other word
-</p>
+<div class="columns">
+<div>
 
-```python
-# Simplified attention
-def attention(Q, K, V):
-    scores = Q @ K.transpose() / sqrt(d_k)
-    weights = softmax(scores)
-    return weights @ V
-```
+> **Analogy:** Reading a book and being able to instantly refer back to any previous page, understanding how every word relates to every other word
+</div>
+<div>
+
+![w:300](image.png)
+
+</div>
+</div>
 
 ---
 
@@ -240,10 +272,10 @@ def attention(Q, K, V):
 
 | Feature | Impact | Result |
 |---------|--------|--------|
-| ⚡ **Parallel Processing** | Process all words simultaneously | 100x faster training |
-| 🔍 **Long-range Dependencies** | Connect ideas across documents | Better understanding |
-| 📈 **Scalability** | Performance improves with size | Predictable scaling |
-| 🎯 **Transfer Learning** | Pre-train once, use many tasks | Cost efficiency |
+| **Parallel Processing** | Process all words simultaneously | 100x faster training |
+| **Long-range Dependencies** | Connect ideas across documents | Better understanding |
+| **Scalability** | Performance improves with size | Predictable scaling |
+| **Transfer Learning** | Pre-train once, use many tasks | Cost efficiency |
 
 Transformers solved the fundamental problems that held back previous approaches
 
@@ -259,12 +291,12 @@ Transformers solved the fundamental problems that held back previous approaches
 | **GPT-4** (2023) | ~1.7 Trillion* | ~13T tokens | 128K tokens |
 | **Claude 3** (2024) | Not disclosed | Not disclosed | 200K tokens |
 
-<p class="small">*Estimated, not officially disclosed</p>
-<p class="small">
-> 📈 **Scaling Law:** 10x more parameters → Predictable improvement</p>
-<p class="small">
-> ⚠️ **But:** 10x parameters → 100x training cost!
-</p>
+*Estimated, not officially disclosed
+
+> **Scaling Law:** 10x more parameters → Predictable improvement
+
+> **But:** 10x parameters → 100x training cost!
+
 
 ---
 
@@ -275,28 +307,21 @@ Transformers solved the fundamental problems that held back previous approaches
 
 ---
 
-# Tokenization: Breaking Down Language 🔤
+# Tokenization: Breaking Down Language
 
 Models don't see words, they see **tokens**
 
 ### Example:
-```
 "Understanding AI" becomes:
 [Under] [standing] [AI]
-```
 
 ### Vocabulary Sizes:
 - **GPT-3:** ~50,000 tokens
 - **Claude:** ~100,000 tokens
 - **Llama:** ~32,000 tokens
 
-```python
-text = "Hello world!"
-tokens = tokenizer.encode(text)  # [15496, 995, 0]
-decoded = tokenizer.decode(tokens)  # "Hello world!"
-```
 
-> ⚠️ **Note:** Different tokenization = Different costs!
+> **Note:** Different tokenization = Different costs!
 
 ---
 
@@ -306,7 +331,6 @@ decoded = tokenizer.decode(tokens)  # "Hello world!"
 <div class="columns">
 <div>
 
-```
 Message 1: "Hello" 
   → Process: "Hello"
 
@@ -315,7 +339,6 @@ Message 2: "How are you?"
 
 Message 3: "Tell me about AI" 
   → Process: ALL previous + new
-```
 </div>
 <div>
 
@@ -342,9 +365,9 @@ Message 3: "Tell me about AI"
 | **Gemini 1.5** | 1M tokens | ~750,000 words (7 novels!) |
 
 ### Trade-offs:
-✅ **Longer Context** = More information
-⚡ **More Compute** = Quadratic scaling  
-💰 **Higher Cost** = More expensive
+**Longer Context** = More information
+**More Compute** = Quadratic scaling  
+**Higher Cost** = More expensive
 
 ---
 
@@ -358,10 +381,10 @@ Think of it as a massive map where:
 - Similar concepts cluster together
 
 ### This enables:
-- ✨ Creative connections between ideas
-- 🎭 Understanding analogies and metaphors
-- 🔄 Transfer knowledge between domains
-- 🎯 Zero-shot learning (new tasks without training)
+- Creative connections between ideas
+- Understanding analogies and metaphors
+- Transfer knowledge between domains
+- Zero-shot learning (new tasks without training)
 
 ---
 
@@ -372,7 +395,7 @@ Think of it as a massive map where:
 
 ---
 
-# Diffusion Models for Images 🎨
+# Diffusion Models for Images
 
 ## Different approach from language models
 
@@ -387,7 +410,7 @@ Think of it as a massive map where:
 - **Midjourney** - Independent lab
 - **Stable Diffusion** - Open source
 
-> 🔗 **Key Innovation:** Text embeddings from language models guide image generation
+> **Key Innovation:** Text embeddings from language models guide image generation
 
 ---
 
@@ -426,7 +449,7 @@ Think of it as a massive map where:
 
 ---
 
-# Why Training is Expensive 💰
+# Why Training is Expensive
 
 <p class="center" style="font-size: 3em; color: #f5576c;">
 GPT-4 Training: $100+ Million
@@ -436,11 +459,11 @@ GPT-4 Training: $100+ Million
 
 | Component | Details | Cost Factor |
 |-----------|---------|-------------|
-| 🖥️ **Hardware** | 10,000+ NVIDIA H100 GPUs @ $30K each | $300M+ |
-| ⚡ **Electricity** | ~50 GWh total (small city for months) | $5M+ |
-| ⏱️ **Time** | 3-6 months continuous computation | Opportunity cost |
-| 👥 **Team** | 50+ researchers & engineers | $10M+ |
-| 📊 **Data** | Collection, cleaning, validation | $5M+ |
+| **Hardware** | 10,000+ NVIDIA H100 GPUs @ $30K each | $300M+ |
+| **Electricity** | ~50 GWh total (small city for months) | $5M+ |
+| **Time** | 3-6 months continuous computation | Opportunity cost |
+| **Team** | 50+ researchers & engineers | $10M+ |
+| **Data** | Collection, cleaning, validation | $5M+ |
 
 ---
 
@@ -457,21 +480,19 @@ GPT-4 Training: $100+ Million
 - Quick adaptations
 
 **Example:**
-```text
 You are a pirate. Answer 
 as a pirate would.
 
 User: What is AI?
 AI: Arr, AI be like...
-```
 
-✅ Free, instant
-❌ Limited, temporary
+Free, instant
+Limited, temporary
 
 </div>
 <div>
 
-## Fine-tuning 🔧
+## Fine-tuning
 
 **When to use:**
 - Permanent changes
@@ -479,16 +500,14 @@ AI: Arr, AI be like...
 - Production deployment
 
 **Example:**
-```python
 model = finetune(
     base="llama-2",
     data="medical.txt",
     epochs=3
 )
-```
 
-✅ Powerful, permanent
-❌ Expensive, complex
+Powerful, permanent
+Expensive, complex
 
 </div>
 </div>
@@ -499,13 +518,11 @@ model = finetune(
 
 ## Low-Rank Adaptation: Fine-tune without modifying all weights
 
-```python
 # Traditional fine-tuning (expensive)
 W_new = W_original + ΔW  # ΔW is huge!
 
 # LoRA (efficient)
 W_new = W_original + A @ B  # A and B are small!
-```
 
 ### Benefits:
 - **1000x** fewer parameters to train
@@ -531,7 +548,7 @@ W_new = W_original + A @ B  # A and B are small!
 | **Customization** | Limited | Complete freedom |
 | **Transparency** | Black box | See everything |
 
-> 💡 **Trend:** Gap narrowing rapidly. Llama 3.1 405B ≈ GPT-4 performance!
+> **Trend:** Gap narrowing rapidly. Llama 3.1 405B ≈ GPT-4 performance!
 
 ---
 
@@ -542,26 +559,26 @@ W_new = W_original + A @ B  # A and B are small!
 
 ---
 
-# Emerging Trends 🚀
+# Emerging Trends
 
 | Trend | Description | Impact |
 |-------|-------------|--------|
-| 🎭 **Multimodal Models** | Text + Images + Audio + Video | Universal AI assistants |
-| 📱 **Edge AI** | Models on phones/laptops | Privacy + No internet |
-| 🤖 **AI Agents** | Models that take actions | Automation revolution |
-| 🧠 **Reasoning Models** | Step-by-step thinking (o1, o3) | Complex problem solving |
-| 🔬 **Scientific AI** | Protein folding, drug discovery | Research acceleration |
+| **Multimodal Models** | Text + Images + Audio + Video | Universal AI assistants |
+| **Edge AI** | Models on phones/laptops | Privacy + No internet |
+| **AI Agents** | Models that take actions | Automation revolution |
+| **Reasoning Models** | Step-by-step thinking (o1, o3) | Complex problem solving |
+| **Scientific AI** | Protein folding, drug discovery | Research acceleration |
 
 The pace of progress is accelerating exponentially
 
 ---
 
-# For College Students 🎓
+# For College Students
 
 <div class="columns">
 <div>
 
-## ✅ Good Uses:
+## Good Uses:
 - Brainstorming and ideation
 - Learning complex concepts
 - Code assistance/debugging
@@ -573,7 +590,7 @@ The pace of progress is accelerating exponentially
 </div>
 <div>
 
-## ❌ Avoid:
+## Avoid:
 - Submitting AI work as yours
 - Bypassing learning objectives
 - Violating academic policies
@@ -585,71 +602,41 @@ The pace of progress is accelerating exponentially
 </div>
 </div>
 
-> ⚠️ **Remember:** AI is a tool to enhance learning, not replace it!
+> **Remember:** AI is a tool to enhance learning, not replace it!
 
 ---
 
 # Skills That Matter MORE With AI
 
-### 🎯 **Critical Thinking**
+### **Critical Thinking**
 Evaluating AI outputs, spotting errors, verification
 
-### ❓ **Asking Good Questions**
+### **Asking Good Questions**
 Prompt engineering, problem decomposition
 
-### 🎨 **Creativity**
+### **Creativity**
 Using AI as a collaborator, not replacement
 
-### 🤝 **Human Skills**
+### **Human Skills**
 Empathy, leadership, communication, ethics
 
-### 📚 **Domain Expertise**
+### **Domain Expertise**
 Deep knowledge AI can't replace
 
-> 💡 **Key Insight:** AI handles routine → Humans focus on creative & strategic work
+> **Key Insight:** AI handles routine → Humans focus on creative & strategic work
 
----
 
-# Career Opportunities 💼
-
-<div class="columns">
-<div>
-
-## Technical Roles
-- **ML Engineer** - Build AI systems
-- **AI Researcher** - Push boundaries
-- **Prompt Engineer** - Optimize AI
-- **AI Safety** - Ensure responsible AI
-- **Data Scientist** - Prepare data
-
-</div>
-<div>
-
-## Hybrid Roles
-- **AI Product Manager** - Bridge tech/business
-- **AI Ethics Specialist** - Policy & guidelines
-- **AI + Domain Expert** - Medicine, Law, Finance
-- **AI Educator** - Teach others
-- **AI UX Designer** - Human-AI interaction
-
-</div>
-</div>
-
-<p class="center">📈 AI jobs growing 75% annually. Average salary: $150,000+</p>
-
----
-
-# Resources to Get Started 🛠️
+# Resources to Get Started
 
 <div class="columns">
 <div>
 
 ## Free Learning:
-- 🎓 **fast.ai** - Practical deep learning
-- 📚 **Hugging Face** - Tutorials & models
-- 🔧 **Google Colab** - Free GPUs
-- 💬 **Reddit** - r/LocalLLaMA
-- 📺 **YouTube** - Two Minute Papers
+- **Catalyst** - Multiple AI Inference [Catalyst](https://catalyst.voov.ai)
+- **Hugging Face** - Tutorials & models
+- **Google Colab** - Free GPUs
+- **Reddit** - r/LocalLLaMA
+- **YouTube** - [Adrej Karpathy](https://www.youtube.com/andrejkarpathy)
 
 </div>
 <div>
@@ -664,30 +651,30 @@ Deep knowledge AI can't replace
 </div>
 </div>
 
-### 🎯 First Projects:
+### First Projects:
 1. Build a chatbot for study notes
 2. Fine-tune a model on your writing
 3. Create an AI teaching assistant
 
 ---
 
-# Key Takeaways 🎯
+# Key Takeaways
 
-- 📊 AI models are just weights learned from data
-- ⚡ Transformers revolutionized AI with attention
-- 📈 Bigger models work better but cost more
-- 🔤 Understanding tokenization and context is crucial
-- 🔓 Open source is democratizing AI
-- 🛠️ AI is a tool - learn to use it wisely
+- AI models are just weights learned from data
+- Transformers revolutionized AI with attention
+- Bigger models work better but cost more
+- Understanding tokenization and context is crucial
+- Open source is democratizing AI
+- AI is a tool - learn to use it wisely
 
 > ## The AI revolution is just beginning.
-> ## You're entering college at the perfect time! 🚀
+> ## You're entering college at the perfect time!
 
 ---
 
 <!-- _class: lead -->
 
-# Questions? 🤔
+# Questions?
 
 ## Let's explore your curiosities about AI!
 
