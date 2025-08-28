@@ -682,6 +682,6 @@ Deep knowledge AI can't replace
 
 <p class="small">
 
-Contact: gavi.narra@objectgraph.com | Slides: https://static.objectgraph.com/ai-presentation
+Contact: gavi.narra@objectgraph.com | Slides: https://cdn.jsdelivr.net/gh/gavi/ai-slides@main/slides.pdf
 
 </p>
