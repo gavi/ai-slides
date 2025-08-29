@@ -573,6 +573,32 @@ The pace of progress is accelerating exponentially
 
 ---
 
+<!-- _class: lead _note: Use this slide as a “pause for imagination”. Ask the audience to shout out wild ideas, then walk through a few concrete examples. -->
+# What If…?
+
+## Imagine the next **10 years** of AI
+
+- **What if** every student had a personal, on‑device LLM that could run offline?  
+  - Zero‑latency tutoring, **privacy‑first** learning.  
+
+- **What if** models could **reason** like a human (chain‑of‑thought, planning) *out‑of‑the‑box*?  
+  - Real‑time problem solving in math, physics, coding without prompting tricks.  
+
+- **What if** the **cost of training** dropped 100× (e.g., cheap, energy‑efficient chips, better algorithms)?  
+  - Hundreds of niche, domain‑specific models – “AI for every lab”.  
+
+- **What if** AI could **understand and generate video** at the same fidelity as text?  
+  - Instant lecture videos, interactive simulations, immersive labs.  
+
+- **What if** **multimodal agents** could **act in the world** (control robots, manage cloud resources) autonomously?  
+  - AI‑powered research assistants that run experiments, collect data, and write reports.  
+
+> **Takeaway:**  
+> These “what‑ifs” aren’t sci‑fi; they’re the **direction** our research, policy, and education choices will shape.  
+
+--- 
+
+
 # For College Students
 
 <div class="columns">
